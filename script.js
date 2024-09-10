@@ -5,6 +5,10 @@ function onBallClick(elBall) {
 	if (!elBall.style.width) { //because its falsy 
 		elBall.style.width = "100px"
 	}
+  if(elBall.style.width === 400+'px'){
+    elBall.style.width = "50px"
+		elBall.style.height = "50px"
+  }
 
 	elBall.style.height = parseInt(elBall.style.height) + 50 + "px"
 	elBall.style.width = parseInt(elBall.style.width) + 50 + "px"
