@@ -3,6 +3,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 function onBallClick(elBall) {
+	elBall.style.backgroundColor = getRandomColor()
   const currentSize = parseInt(elBall.style.height) || 100
   const random = getRandomIntInclusive(20, 60)
   const newSize = currentSize + random
