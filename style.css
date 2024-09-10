@@ -1,0 +1,14 @@
+body {
+	background-color: black;
+}
+h1 {
+	color: white;
+}
+.ball {
+	height: 100px;
+	width: 100px;
+  border: 1px white solid;
+  border-radius: 50%;
+  background-color: lightsalmon;
+  margin: 0 auto;
+} 
