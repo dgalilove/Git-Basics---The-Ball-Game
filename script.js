@@ -1,16 +1,17 @@
-function onBallClick(elBall) {
-	if (!elBall.style.height) { //because its falsy 
-		elBall.style.height = "100px"
-	}
-	if (!elBall.style.width) { //because its falsy 
-		elBall.style.width = "100px"
-	}
-  if(elBall.style.width === 400+'px'){
-    elBall.style.width = "50px"
-		elBall.style.height = "50px"
-  }
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
 
-	elBall.style.height = parseInt(elBall.style.height) + 50 + "px"
-	elBall.style.width = parseInt(elBall.style.width) + 50 + "px"
-	elBall.innerText = parseInt(elBall.style.height)
+function onBallClick(elBall) {
+  const currentSize = parseInt(elBall.style.height) || 100
+  const random = getRandomIntInclusive(20, 60)
+  const newSize = currentSize + random
+
+  if (newSize > 400) {
+    elBall.style.height = elBall.style.width = "100px"
+    elBall.innerText = "100"
+  } else {
+    elBall.style.height = elBall.style.width = newSize + "px"
+    elBall.innerText = newSize
+  }
 }
