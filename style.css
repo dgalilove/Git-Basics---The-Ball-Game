@@ -64,3 +64,18 @@ h1 {
   font-weight: bold;
   transition: 1s;
 } 
+.ball5 {
+	height: 100px;
+	width: 100px;
+  border: 1px white solid;
+  border-radius: 50%;
+  background-color: rgb(230, 173, 173);
+  margin: 0 auto;
+  color : white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 1s;
+} 

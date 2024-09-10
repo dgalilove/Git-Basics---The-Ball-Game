@@ -59,3 +59,8 @@ function reduceDiameter() {
   elBall1.innerText = heightBall1;
   elBall2.innerText = heightBall2;
 }
+
+function changeBackground(){
+	const elBody = document.querySelector('body')
+	elBody.style.backgroundColor = getRandomColor()
+}
