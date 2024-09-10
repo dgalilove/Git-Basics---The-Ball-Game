@@ -1,96 +1,46 @@
 body {
-	background-color: black;
+  background-color: black;
 }
+
 h1 {
-	color: white;
+  color: white;
 }
+
+.ball1, .ball2, .ball3, .ball4, .ball5, .ball6 {
+  height: 100px;
+  width: 100px;
+  border: 1px white solid;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 1s;
+}
+
 .ball1 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: lightsalmon;
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
+
 .ball2 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: lightblue;
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
+
 .ball3 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: rgb(173, 230, 189);
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
+
 .ball4 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: rgb(230, 173, 215);
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
+
 .ball5 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: rgb(230, 173, 173);
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
+
 .ball6 {
-	height: 100px;
-	width: 100px;
-  border: 1px white solid;
-  border-radius: 50%;
   background-color: rgb(181, 230, 173);
-  margin: 0 auto;
-  color : white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  transition: 1s;
-} 
+}
