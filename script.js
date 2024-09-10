@@ -1,3 +1,6 @@
+var gBall1 = document.querySelector(".ball1")
+var gBall2 = document.querySelector(".ball2")
+
 function onBallClick(elBall, maxDiameter) {
 	const currentSize = parseInt(elBall.style.height) || 100
 	elBall.style.backgroundColor = getRandomColor()
@@ -14,53 +17,51 @@ function onBallClick(elBall, maxDiameter) {
 }
 
 function swapColorAndSize() {
-	const elBall1 = document.querySelector(".ball1")
-	const elBall2 = document.querySelector(".ball2")
+	const innerText1 = gBall1.innerText
+	const innerText2 = gBall2.innerText
+	const color1 = gBall1.style.backgroundColor
+	const color2 = gBall2.style.backgroundColor
+	const height1 = parseInt(gBall1.style.height) || 100
+	const height2 = parseInt(gBall2.style.height) || 100
 
-	const height1 = parseInt(elBall1.style.height) || 100
-	const height2 = parseInt(elBall2.style.height) || 100
-	const innerText1 = elBall1.innerText
-	const innerText2 = elBall2.innerText
-	const color1 = elBall1.style.backgroundColor
-	const color2 = elBall2.style.backgroundColor
-
-	elBall1.style.height = elBall1.style.width = height2 + "px"
-	elBall2.style.height = elBall2.style.width = height1 + "px"
-
-	elBall1.innerText = innerText2
-	elBall2.innerText = innerText1
-
-	elBall1.style.backgroundColor = color2 || "lightblue"
-	elBall2.style.backgroundColor = color1 || "lightsalmon"
-}
-
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+	gBall1.style.height = gBall1.style.width = height2 + "px"
+	gBall2.style.height = gBall2.style.width = height1 + "px"
+	gBall1.innerText = innerText2
+	gBall2.innerText = innerText1
+	gBall1.style.backgroundColor = color2 || "lightblue"
+	gBall2.style.backgroundColor = color1 || "lightsalmon"
 }
 
 function reduceDiameter() {
-  var elBall1 = document.querySelector(".ball1");
-  var elBall2 = document.querySelector(".ball2");
+	var heightBall1 = parseInt(gBall1.style.height) || 100
+	var heightBall2 = parseInt(gBall2.style.height) || 100
+	const random = getRandomIntInclusive(20, 60)
 
-  var heightBall1 = parseInt(elBall1.style.height) || 100;
-  var heightBall2 = parseInt(elBall2.style.height) || 100;
+	heightBall1 = heightBall1 - random
+	heightBall2 = heightBall2 - random
 
-  const random = getRandomIntInclusive(20, 60);
+	heightBall1 = heightBall1 < 100 ? 100 : heightBall1
+	heightBall2 = heightBall2 < 100 ? 100 : heightBall2
 
-  heightBall1 = heightBall1 - random;
-  heightBall2 = heightBall2 - random;
+	gBall1.style.height = gBall1.style.width = heightBall1 + "px"
+	gBall2.style.height = gBall2.style.width = heightBall2 + "px"
 
-  heightBall1 = heightBall1 < 100 ? 100 : heightBall1;
-  heightBall2 = heightBall2 < 100 ? 100 : heightBall2;
-
-  elBall1.style.height = elBall1.style.width = heightBall1 + "px";
-  elBall2.style.height = elBall2.style.width = heightBall2 + "px";
-
-  elBall1.innerText = heightBall1;
-  elBall2.innerText = heightBall2;
+	gBall1.innerText = heightBall1
+	gBall2.innerText = heightBall2
 }
 
-function changeBackground(){
-	const elBody = document.querySelector('body')
+function changeBackground() {
+	const elBody = document.querySelector("body")
 	elBody.style.backgroundColor = getRandomColor()
+}
+
+function reset() {
+	gBall1.style.height = gBall1.style.width = "100px"
+	gBall2.style.height = gBall2.style.width = "100px"
+
+	gBall1.innerText = "100"
+	gBall2.innerText = "100"
+
+	gBall1.style.backgroundColor = "lightsalmon"
+	gBall2.style.backgroundColor = "lightblue"
 }
