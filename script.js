@@ -1,5 +1,13 @@
+var gBody = document.querySelector("body")
 var gBall1 = document.querySelector(".ball1")
 var gBall2 = document.querySelector(".ball2")
+var gBall3 = document.querySelector(".ball3")
+var gBall4 = document.querySelector(".ball4")
+var gBall6 = document.querySelector(".ball6")
+
+var gInterval = null
+var gCycleCount = 0
+var gHover = null
 
 function onBallClick(elBall, maxDiameter) {
 	const currentSize = parseInt(elBall.style.height) || 100
@@ -51,8 +59,7 @@ function reduceDiameter() {
 }
 
 function changeBackground() {
-	const elBody = document.querySelector("body")
-	elBody.style.backgroundColor = getRandomColor()
+	gBody.style.backgroundColor = getRandomColor()
 }
 
 function reset() {
@@ -64,4 +71,32 @@ function reset() {
 
 	gBall1.style.backgroundColor = "lightsalmon"
 	gBall2.style.backgroundColor = "lightblue"
+	gBody.style.backgroundColor = 'black'
+}
+function clickAll() {
+  onBallClick(gBall1, 200)
+  onBallClick(gBall2, 300)
+	swapColorAndSize()
+	reduceDiameter()
+	changeBackground()
+  gCycleCount++
+  if (gCycleCount >= 10) {
+    clearInterval(gInterval)
+  }
+}
+
+function startClickInterval() {
+  gInterval = setInterval(clickAll, 2000)
+}
+
+gBall6.onmouseover = function() {
+  gHover = setTimeout(() => {
+    gCycleCount = 0
+    startClickInterval()
+  }, 2000)
+}
+
+gBall6.onmouseout = function() {
+  clearTimeout(gHover)
+  clearInterval(gInterval)
 }
